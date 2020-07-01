@@ -9,6 +9,7 @@ public class GGPsFunCrypto {
 
     public void funCrypto(){
         System.out.println("Now at \"GGPs fun crypto\". \n" +
+                "Warning.: Doesn't look good for now and it doesn't like spaces and other characters. For now. \n" +
                 "Please select which one you wish to see.");
         int leaveloop = 0;
         while (leaveloop != 1){
@@ -26,7 +27,7 @@ public class GGPsFunCrypto {
                 case "2":
                     System.out.println("Please input the string to be decrypted");
                     String todencrypt = input.nextLine();
-                    System.out.println("dencrypt.dencrypt(todencrypt)");
+                    System.out.println(decrypt.decrypt(todencrypt));
                     break;
                 case "3":
                     description();
