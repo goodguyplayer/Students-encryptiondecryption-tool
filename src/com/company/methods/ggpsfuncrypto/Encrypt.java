@@ -5,17 +5,26 @@ import java.util.List;
 import java.util.Random;
 
 class Encrypt {
+
+    // Main method for encryption
     public String encrypt(String input){
-        // String for outputting the result
-        String output = "";
-        int size = 0;
+        int size = input.length();
 
-        //Arrays for the numbers
-        ArrayList<Integer> front = new ArrayList<Integer>();
-        ArrayList<Integer> middle = new ArrayList<Integer>();
-        ArrayList<Integer> back = new ArrayList<Integer>();
+        // Random strings to make the middle dirty.
+        String front = randomNumbers(size);
+        String back = randomNumbers(size);
 
-        return output;
+        // String to be used for octs.
+        String middle = "";
+
+        // Loop that'll convert every letter from input into oct
+        for (int i = 0; i < size; i++) {
+            char letter = input.charAt(i);
+            middle += Integer.toOctalString(letter);
+        }
+
+        // Output result
+        return (front + middle + back);
     }
 
     // Random number generator
