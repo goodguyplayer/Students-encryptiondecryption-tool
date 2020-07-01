@@ -23,7 +23,7 @@ class EncrDecr {
     public void bruteForce(String input){
         for (int i = 0; i < 26; i++) {
             System.out.println("Test "+ (i+1) +" out of 26");
-            encrDecr(input, i);
+            System.out.println(encrDecr(input, i));
             System.out.println("\n");
         }
 

@@ -9,7 +9,7 @@ public class GGPsFunCrypto {
 
     public void funCrypto(){
         System.out.println("Now at \"GGPs fun crypto\". \n" +
-                "Warning.: Doesn't look good for now and it doesn't like spaces and other characters. For now. \n" +
+                "Warning.: Doesn't look good for now and it doesn't like special characters. For now. \n" +
                 "Please select which one you wish to see.");
         int leaveloop = 0;
         while (leaveloop != 1){

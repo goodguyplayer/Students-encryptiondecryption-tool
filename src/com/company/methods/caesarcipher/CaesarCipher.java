@@ -1,9 +1,54 @@
 package com.company.methods.caesarcipher;
 
+import java.util.Scanner;
+
 public class CaesarCipher {
+    Scanner input = new Scanner(System.in);
+    EncrDecr encrDecr = new EncrDecr();
 
     public void caesarCipher(){
-        
+        int leaveloop = 0;
+        String toChange;
+        System.out.println("Now at \"Caesar Cipher - Shift Cipher\". \n" +
+                "Warning.: Only accept lowercase characters, no special character or spaces. \n" +
+                "Please select which one you wish to see.");
+        while (leaveloop != 1){
+            System.out.println( "1 - Encrypt or decrypt. \n" +
+                                "2 - Bruteforce. \n" +
+                                "3 - Description. \n" +
+                                "4 - Exit");
+            String choice = input.nextLine();
+            switch (choice){
+                case "1":
+                    System.out.println("Please input the string");
+                    toChange = input.nextLine();
+                    System.out.println("Please input the shift");
+                    String shift = input.nextLine();
+                    System.out.println(encrDecr.encrDecr(toChange, Integer.parseInt(shift)));
+                    break;
+
+                case "2":
+                    System.out.println("Please input the string");
+                    toChange = input.nextLine();
+                    encrDecr.bruteForce(toChange);
+                    break;
+
+                case "3":
+                    description();
+                    break;
+
+                case "4":
+                    System.out.println("Exiting...");
+                    leaveloop = 1;
+                    break;
+
+                default:
+                    System.out.println("Input error. Please try again.");
+                    break;
+            }
+        }
+
+
     }
 
     private void description(){
