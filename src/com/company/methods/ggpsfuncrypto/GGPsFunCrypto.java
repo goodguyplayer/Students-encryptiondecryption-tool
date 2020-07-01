@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class GGPsFunCrypto {
     Encrypt encrypt = new Encrypt();
     Decrypt decrypt = new Decrypt();
+    Scanner input = new Scanner(System.in);
 
     public void funCrypto(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please select which one you wish to see.");
+        System.out.println("Now at \"GGPs fun crypto\". \n" +
+                "Please select which one you wish to see.");
         int leaveloop = 0;
         while (leaveloop != 1){
             System.out.println( "1 - Encrypt string. \n" +
@@ -58,5 +59,4 @@ public class GGPsFunCrypto {
                         " - Output result "
         );
     }
-
 }
