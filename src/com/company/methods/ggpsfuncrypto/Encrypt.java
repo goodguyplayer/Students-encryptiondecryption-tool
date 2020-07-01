@@ -17,10 +17,18 @@ class Encrypt {
         // String to be used for octs.
         String middle = "";
 
+        // For lazy work
+        String helper = "";
+
         // Loop that'll convert every letter from input into oct
         for (int i = 0; i < size; i++) {
             char letter = input.charAt(i);
-            middle += Integer.toOctalString(letter);
+            helper = Integer.toOctalString(letter);
+            if (helper.length() != 3){
+                middle += "0" + helper;
+            } else {
+                middle += helper;
+            }
         }
 
         // Output result
