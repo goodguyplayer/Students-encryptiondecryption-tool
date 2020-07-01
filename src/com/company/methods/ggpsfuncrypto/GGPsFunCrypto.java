@@ -1,11 +1,50 @@
 package com.company.methods.ggpsfuncrypto;
 
+import java.util.Scanner;
+
 public class GGPsFunCrypto {
+    Encrypt encrypt = new Encrypt();
+    Decrypt decrypt = new Decrypt();
+
+    public void funCrypto(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please select which one you wish to see.");
+        int leaveloop = 0;
+        while (leaveloop != 1){
+            System.out.println( "1 - Encrypt string. \n" +
+                                "2 - Decrypt string. \n" +
+                                "3 - View description. \n" +
+                                "4 - Exit loop.");
+            String choice = input.nextLine();
+            switch (choice){
+                case "1":
+                    System.out.println("Please input the string to be encrypted");
+                    String toencrypt = input.nextLine();
+                    System.out.println(encrypt.encrypt(toencrypt));
+                    break;
+                case "2":
+                    System.out.println("Please input the string to be decrypted");
+                    String todencrypt = input.nextLine();
+                    System.out.println("dencrypt.dencrypt(todencrypt)");
+                    break;
+                case "3":
+                    description();
+                    break;
+                case "4":
+                    System.out.println("Leaving loop, returning to previous menu");
+                    leaveloop = 1;
+                    break;
+                default:
+                    System.out.println("Input not recognized. Please use one of the given ones");
+                    break;
+            }
+        }
+    }
 
 
 
     // Description of the crypto method
-    public void description(){
+    private void description(){
         System.out.println(
                 "GGP's Fun crypto \n" +
                         "Encryption.: \n" +
