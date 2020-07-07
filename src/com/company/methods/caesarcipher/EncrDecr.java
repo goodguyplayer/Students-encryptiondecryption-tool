@@ -15,19 +15,19 @@ class EncrDecr {
 
             //This is gonna be ugly.
             if (Character.isUpperCase(letter)){
-                if (letter > 'Z'){
-                    output += (char)(input.charAt(i) - (26-shift));
+                if (letter + shift > 'Z'){
+                    output += (char)(letter - (26-shift));
                 }
                 else {
-                    output += (char)(input.charAt(i) + shift);
+                    output += (char)(letter + shift);
                 }
             } else if (Character.isLowerCase(letter)){
-                if (letter > 'z'){
-                    output += (char)(input.charAt(i) - (26-shift));
+                if (letter + shift  > 'z'){
+                    output += (char)(letter - (26-shift));
 
                 }
                 else {
-                    output += (char)(input.charAt(i) + shift);
+                    output += (char)(letter + shift);
                 }
             } else {
                 output += letter;
