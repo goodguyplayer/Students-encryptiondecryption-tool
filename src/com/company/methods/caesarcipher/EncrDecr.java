@@ -1,20 +1,37 @@
 package com.company.methods.caesarcipher;
 
+import static java.lang.Character.*;
+
 class EncrDecr {
 
     public String encrDecr(String input, int shift){
         String output = "";
+        char letter;
         int size = input.length();
 
         // For every char, shift based on the given shift.
         for(int i = 0; i < size; i++){
-            char letter = (char)(input.charAt(i) + shift);
+            letter = (char) (input.charAt(i));
 
-            // We should fix this later, add spaces, special characters and caps.
-            if (letter > 'z')
-                output += (char)(input.charAt(i) - (26-shift));
-            else
-                output += (char)(input.charAt(i) + shift);
+            //This is gonna be ugly.
+            if (Character.isUpperCase(letter)){
+                if (letter > 'Z'){
+                    output += (char)(input.charAt(i) - (26-shift));
+                }
+                else {
+                    output += (char)(input.charAt(i) + shift);
+                }
+            } else if (Character.isLowerCase(letter)){
+                if (letter > 'z'){
+                    output += (char)(input.charAt(i) - (26-shift));
+
+                }
+                else {
+                    output += (char)(input.charAt(i) + shift);
+                }
+            } else {
+                output += letter;
+            }
         }
         return output;
     }
