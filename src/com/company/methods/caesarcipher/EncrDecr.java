@@ -6,28 +6,33 @@ class EncrDecr {
 
     public String encrDecr(String input, int shift){
         String output = "";
-        char letter;
         int size = input.length();
+        char letter;
+        char tester;
 
         // For every char, shift based on the given shift.
         for(int i = 0; i < size; i++){
-            letter = (char) (input.charAt(i));
+            letter = input.charAt(i);
+            tester = (char) (letter + shift);
 
-            //This is gonna be ugly.
+            //This is gonna be ugly. Fix later? There should be a way to switch case this or even better...
+            // If character is uppercase, get into this block
             if (Character.isUpperCase(letter)){
-                if (letter + shift > 'Z'){
-                    output += (char)(letter - (26-shift));
+                if (tester > 'Z'){
+                    output += (char)(tester - 26);
                 }
                 else {
-                    output += (char)(letter + shift);
+                    output += (char)(tester);
                 }
+                // Else, if lowercase, get into this block
             } else if (Character.isLowerCase(letter)){
-                if (letter + shift  > 'z'){
-                    output += (char)(letter - (26-shift));
+                if (tester  > 'z'){
+                    output += (char)(tester - 26);
 
                 }
+                // However, if it's not a character (space, comma, dots), just add
                 else {
-                    output += (char)(letter + shift);
+                    output += (char)(tester);
                 }
             } else {
                 output += letter;
